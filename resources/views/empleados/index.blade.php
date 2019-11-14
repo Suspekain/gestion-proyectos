@@ -4,23 +4,26 @@
 
 @section('content')
 
-  <h2>Empleados</h2>
+<h2>Empleados</h2>
 
-    <table>
-      <tr>
-        <th>Id</th>
-        <th>Nombre</th>
-        <th>Email</th>
-        <th>Telefono</th>
-      </tr>
+<table>
+  <tr>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Email</th>
+    <th>Telefono</th>
+  </tr>
 
-      <tr>
-        <td>Aqui el id</td>
-        <td>Aqui el nombre</td>
-        <td>Aqui el email</td>
-        <td>Aqui el telefono</td>
-      </tr>
+  @foreach ($empleados as $empleado)
+  <tr>
+    <td>{{$empleado->id}}</td>
+    <td>{{$empleado->nombre}}</td>
+    <td>{{$empleado->email}}</td>
+    <td>{{$empleado->telefono}}</td>
+  </tr>
+  @endforeach
 
-    </table>
+
+</table>
 
 @endsection
