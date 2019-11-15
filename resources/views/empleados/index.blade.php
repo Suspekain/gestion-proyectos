@@ -13,7 +13,7 @@
     <th>Email</th>
     <th>Telefono</th>
   </tr>
-
+  @if (isset($empleados))
   @foreach ($empleados as $empleado)
   <tr>
     <td>{{$empleado->id}}</td>
@@ -22,8 +22,11 @@
     <td>{{$empleado->telefono}}</td>
   </tr>
   @endforeach
-
+  @endif
 
 </table>
+@if (isset($empleado))
+<p>{{$empleado}}</p>
+@endif
 
 @endsection
