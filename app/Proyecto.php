@@ -9,4 +9,7 @@ class Proyecto extends Model {
   public function proyectos() {
     return $this->hasMany('App\Proyecto');
   }
+  public function empleado() {
+    return $this->belongsto('App\Empleado');
+  }
 }
