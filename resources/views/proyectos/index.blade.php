@@ -34,7 +34,14 @@
 </table>
 
 @if (isset($proyecto))
-<p>{{$proyecto}}</p>
+<h2>Proyecto nº {{$proyecto->id}}</h2>
+<li>Nombre: {{$proyecto->nombre}}</li>
+<li>Titulo: {{$proyecto->titulo}}</li>
+<li>Inicio: {{$proyecto->fechainicio}}</li>
+<li>Fin: {{$proyecto->fechafin}}</li>
+<li>Horas: {{$proyecto->horasestimadas}}</li>
+<li>Responsable de proyecto: <a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></li>
+
 @endif
 
 @endsection

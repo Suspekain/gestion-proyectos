@@ -9,4 +9,7 @@ class Departamento extends Model {
   public function departamentos() {
     return $this->hasMany('App\Departamento');
   }
+  public function empleado() {
+    return $this->hasMany('App\Empleado');
+  }
 }

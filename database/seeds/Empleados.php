@@ -15,7 +15,8 @@ class Empleados extends Seeder
         'nombre' => Str::random(10),
         'apellido' => Str::random(15),
         'email' => 'email@domain.com',
-        'telefono'  => rand(600000000,999999999)
+        'telefono'  => rand(600000000,999999999),
+        'departamento_id' => rand(1,5)
       ]);
     }
   }
