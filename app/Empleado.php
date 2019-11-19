@@ -9,4 +9,7 @@ class Empleado extends Model {
   public function empleados() {
     return $this->hasMany('App\Empleado');
   }
+  public function proyecto() {
+    return $this->hasone('App\Proyecto');
+  }
 }

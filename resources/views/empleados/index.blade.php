@@ -14,6 +14,7 @@
     <th>Telefono</th>
     <th>Responsable de proyecto</th>
   </tr>
+
   @if (isset($empleados))
   @foreach ($empleados as $empleado)
   <tr>
@@ -21,7 +22,7 @@
     <td>{{$empleado->nombre}}</td>
     <td>{{$empleado->email}}</td>
     <td>{{$empleado->telefono}}</td>
-    <td></td>
+    <td><a href="{{route('proyecto.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->id}}</a></td>
   </tr>
   @endforeach
   @endif
