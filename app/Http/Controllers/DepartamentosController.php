@@ -45,7 +45,7 @@ class DepartamentosController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    return view('departamentos.index', ['departamento' => Departamento::find($id)]);
+    return view('departamentos.index', ['departamento' => Departamento::all()]);
   }
 
   /**
