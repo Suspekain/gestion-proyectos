@@ -24,7 +24,7 @@ class Proyectos extends Seeder
         'fechainicio' => $fechainicio,
         'fechafin'  => $fechafin,
         'horasestimadas' => rand(500,3000),
-        'empleado_responsable_id' => $i
+        'empleado_id' => $i
       ]);
     }
   }

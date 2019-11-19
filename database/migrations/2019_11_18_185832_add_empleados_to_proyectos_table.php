@@ -13,8 +13,8 @@ class AddEmpleadosToProyectosTable extends Migration
   */
   public function up() {
     Schema::table('proyectos', function (Blueprint $table) {
-      $table->unsignedBigInteger('empleado_responsable_id');
-      $table->foreign('empleado_responsable_id')->references('id')->on('empleados');
+      $table->unsignedBigInteger('empleado_id');
+      $table->foreign('empleado_id')->references('id')->on('empleados');
     });
   }
 
