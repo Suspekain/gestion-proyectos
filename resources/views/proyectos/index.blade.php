@@ -17,7 +17,6 @@
     <th>Empleado responsable</th>
   </tr>
 
-  @if(isset($proyectos))
   @foreach ($proyectos as $proyecto)
   <tr>
     <td><a href="{{route('proyecto.show', $proyecto->id)}}">{{$proyecto->id}}</a></td>
@@ -29,19 +28,6 @@
     <td><a href="{{route('empleado.show', $proyecto->empleado_id)}}">{{$proyecto->empleado_id}}</a></td>
   </tr>
   @endforeach
-  @endif
-
 </table>
-
-@if (isset($proyecto))
-<h2>Proyecto nº {{$proyecto->id}}</h2>
-<li>Nombre: {{$proyecto->nombre}}</li>
-<li>Titulo: {{$proyecto->titulo}}</li>
-<li>Inicio: {{$proyecto->fechainicio}}</li>
-<li>Fin: {{$proyecto->fechafin}}</li>
-<li>Horas: {{$proyecto->horasestimadas}}</li>
-<li>Responsable de proyecto: <a href="{{route('empleado.show', $proyecto->empleado->id)}}">{{$proyecto->empleado->nombre}}</a></li>
-
-@endif
 
 @endsection

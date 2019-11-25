@@ -10,7 +10,6 @@
   <tr>
     <th>Id</th>
     <th>Nombre</th>
-    <th>Empleados</th>
   </tr>
   @if (isset($departamentos))
   @foreach ($departamentos as $departamento)
@@ -19,18 +18,10 @@
     <td>{{$departamento->nombre}}</td>
     <td>{{$departamento->email}}</td>
     <td>{{$departamento->telefono}}</td>
-    <td>
-      @foreach ($departamento->empleado as $empleado)
-      <li><a href="{{route('empleado.show', $empleado->id)}}">{{$empleado->nombre}}</a></li>
-      @endforeach
-    </td>
   </tr>
   @endforeach
   @endif
 
   </table>
-  @if (isset($departamento))
-  <p>{{$departamento}}</p>
-  @endif
 
 @endsection

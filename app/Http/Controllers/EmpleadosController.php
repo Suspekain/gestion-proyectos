@@ -45,7 +45,7 @@ class EmpleadosController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    return view('empleados.index', ['empleado' => Empleado::find($id)]);
+    return view('empleados.empleado', ['empleado' => Empleado::find($id)]);
   }
 
   /**

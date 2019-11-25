@@ -45,7 +45,7 @@ class ProyectosController extends Controller
   * @return \Illuminate\Http\Response
   */
   public function show($id) {
-    return view('proyectos.index', ['proyecto' => Proyecto::find($id)]);
+    return view('proyectos.proyecto', ['proyecto' => Proyecto::find($id)]);
   }
 
   /**
