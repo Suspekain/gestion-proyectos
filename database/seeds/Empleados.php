@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Empleado;
 
 class Empleados extends Seeder
 {
@@ -18,6 +19,7 @@ class Empleados extends Seeder
         'telefono'  => rand(600000000,999999999),
         'departamento_id' => rand(1,5)
       ]);
+      factory(App\Empleado::class)->create();
     }
   }
 }
