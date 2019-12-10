@@ -1,0 +1,4 @@
+
+    <td><a href="{{route('proyecto.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->id}}</a></td>
+    <td><a href="{{route('departamento.show', $empleado->departamento_id)}}">{{$empleado->departamento_id}}</a></td>
+  
