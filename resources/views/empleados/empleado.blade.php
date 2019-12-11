@@ -9,6 +9,14 @@
 <li>Apellido: {{$empleado->apellido}}</li>
 <li>Email: {{$empleado->email}}</li>
 <li>Telefono: {{$empleado->telefono}}</li>
-<li>Responsable de proyecto: <a href="{{route('proyecto.show', $empleado->proyecto->id)}}">{{$empleado->proyecto->nombre}}</a></li>
+<li>Departamento: <a href="{{route('departamento.show', $empleado->departamento->id)}}">{{$empleado->departamento->id}}</a></li>
+<li>Colaboraciones:
+  <ul>
+    @foreach($empleado->proyecto as $proyecto)
+    <li><a href="{{route('proyecto.show', $proyecto->id)}}">{{$proyecto->nombre}}</a></li>
+    @endforeach
+  </ul>
+</li>
+
 
 @endsection
