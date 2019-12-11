@@ -9,6 +9,7 @@
 <li>Apellido: {{$empleado->apellido}}</li>
 <li>Email: {{$empleado->email}}</li>
 <li>Telefono: {{$empleado->telefono}}</li>
+<li>Jefe de departamento: <a href="#">?</a></li>
 <li>Departamento: <a href="{{route('departamento.show', $empleado->departamento->id)}}">{{$empleado->departamento->id}}</a></li>
 <li>Colaboraciones:
   <ul>
