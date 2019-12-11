@@ -13,6 +13,6 @@ class Departamento extends Model {
     return $this->hasMany('App\Empleado');
   }
   public function jefe() {
-    return $this->hasOne('App\Empleado');
+    return $this->hasOne('App\Empleado','jefe_id','id');
   }
 }
