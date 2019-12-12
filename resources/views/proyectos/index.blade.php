@@ -5,7 +5,8 @@
 @section('content')
 
 <h2>Proyectos</h2>
-
+<a href="{{route('proyecto.create')}}"><button type="button" class="btn btn-dark">Nuevo Proyecto</button></a>
+<hr>
 <table>
   <tr>
     <th>Id</th>
@@ -25,7 +26,7 @@
     <td>{{$proyecto->fechainicio}}</td>
     <td>{{$proyecto->fechafin}}</td>
     <td>{{$proyecto->horasestimadas}}</td>
-    <td><a href="{{route('empleado.show', $proyecto->empleado_id)}}">{{$proyecto->empleado_id}}</a></td>
+    <td><a href="{{route('empleado.show', 1)}}">{{$proyecto->empleado_id}}</a></td>
     <td><a href="{{route('proyecto.edit', $proyecto->id)}}">Editar</a></td>
     <td><a href="{{route('proyecto.delete', $proyecto->id)}}">Eliminar</a></td>
   </tr>

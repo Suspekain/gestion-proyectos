@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Proyecto;
+use App\Empleado;
 
 class ProyectosController extends Controller
 {
@@ -17,9 +18,9 @@ class ProyectosController extends Controller
   *
   * @return \Illuminate\Http\Response
   */
-  public function create()
-  {
-    //
+  public function create() {
+    $empleados = Empleado::all();
+    return view('proyectos.create', ['empleados'=>$empleados]);
   }
 
   /**
@@ -28,9 +29,17 @@ class ProyectosController extends Controller
   * @param  \Illuminate\Http\Request  $request
   * @return \Illuminate\Http\Response
   */
-  public function store(Request $request)
-  {
-    //
+  public function store(Request $request) {
+    $proyecto = new Proyecto;
+    $proyecto->nombre = $request->input('nombre');
+    $proyecto->titulo = $request->input('titulo');
+    $proyecto->fechainicio = $request->input('fechainicio');
+    $proyecto->fechafin = $request->input('fechafin');
+    $proyecto->horasestimadas = $request->input('horasestimadas');
+    $proyecto->save();
+
+    $proyectos = Proyecto::all();
+    return view('proyectos.index',['proyectos' => $proyectos]);
   }
 
   /**
