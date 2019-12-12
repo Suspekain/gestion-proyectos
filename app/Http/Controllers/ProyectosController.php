@@ -49,9 +49,9 @@ class ProyectosController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function edit($id)
-  {
-    //
+  public function edit($id) {
+    $proyecto = Proyecto::find($id);
+    return view('proyectos.edit',['proyecto'=>$proyecto]);
   }
 
   /**
@@ -61,9 +61,16 @@ class ProyectosController extends Controller
   * @param  int  $id
   * @return \Illuminate\Http\Response
   */
-  public function update(Request $request, $id)
-  {
-    //
+  public function update(Request $request, $id) {
+    $proyecto = Proyecto::find($id);
+    $proyecto->nombre = $request->input('nombre');
+    $proyecto->titulo = $request->input('titulo');
+    $proyecto->fechainicio = $request->input('fechainicio');
+    $proyecto->fechafin = $request->input('fechafin');
+    $proyecto->horasestimadas = $request->input('horasestimadas');
+    $proyecto->save();
+    $proyectos = Proyecto::all();
+    return view('proyectos.index',['proyectos'=>$proyectos]);
   }
 
 
