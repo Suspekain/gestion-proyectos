@@ -12,3 +12,4 @@ Route::get('/departamento/{id}', 'DepartamentosController@show')->name('departam
 
 Route::get('/proyectos', 'ProyectosController@index')->name('proyectos.index');
 Route::get('/proyecto/{id}', 'ProyectosController@show')->name('proyecto.show');
+Route::get('/proyecto/delete/{id}','ProyectosController@delete')->name('proyecto.delete');

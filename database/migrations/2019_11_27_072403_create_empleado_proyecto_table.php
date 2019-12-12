@@ -18,7 +18,7 @@ class CreateEmpleadoProyectoTable extends Migration
             $table->unsignedBigInteger('empleado_id')->nullable();
             $table->foreign('empleado_id')->references('id')->on('empleados');
             $table->unsignedBigInteger('proyecto_id')->nullable();
-            $table->foreign('proyecto_id')->references('id')->on('proyectos');
+            $table->foreign('proyecto_id')->references('id')->on('proyectos')->onDelete('cascade');
             $table->date('fechainicio');
             $table->date('fechafin');
             $table->timestamps();

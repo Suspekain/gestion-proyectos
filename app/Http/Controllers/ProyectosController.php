@@ -7,11 +7,6 @@ use App\Proyecto;
 
 class ProyectosController extends Controller
 {
-  /**
-  * Display a listing of the resource.
-  *
-  * @return \Illuminate\Http\Response
-  */
   public function index() {
     $proyectos = Proyecto::all();
     return view('proyectos.index', ['proyectos'=>$proyectos]);
@@ -71,14 +66,10 @@ class ProyectosController extends Controller
     //
   }
 
-  /**
-  * Remove the specified resource from storage.
-  *
-  * @param  int  $id
-  * @return \Illuminate\Http\Response
-  */
-  public function destroy($id)
-  {
-    //
+
+  public function delete($id){
+    Proyecto::where("id",$id)->delete();
+    $proyectos=Proyecto::all();
+    return view("proyectos.index",['proyectos'=>$proyectos]);
   }
 }
