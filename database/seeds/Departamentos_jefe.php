@@ -11,7 +11,7 @@ class Departamentos_jefe extends Seeder
      */
     public function run() {
       for ($i=0; $i < 5; $i++) {
-        DB::table('departamentos')->insert([
+        DB::table('departamentos')->update([
           'jefe' => rand(1,20)
         ]);
       }
