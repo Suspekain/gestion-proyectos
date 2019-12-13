@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Validation;
 use App\Proyecto;
 use App\Empleado;
 
@@ -29,7 +30,7 @@ class ProyectosController extends Controller
   * @param  \Illuminate\Http\Request  $request
   * @return \Illuminate\Http\Response
   */
-  public function store(Request $request) {
+  public function store(Validation $request) {
     $proyecto = new Proyecto;
     $proyecto->nombre = $request->input('nombre');
     $proyecto->titulo = $request->input('titulo');
