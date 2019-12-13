@@ -21,7 +21,7 @@
     <td>{{$empleado->nombre}}</td>
     <td>{{$empleado->email}}</td>
     <td>{{$empleado->telefono}}</td>
-    <td><a href="{{route('departamentos.index')}}">{{$empleado->departamento_id}}</a></td>
+    <td><a href="{{route('departamento.show', $empleado->departamento_id)}}">{{$empleado->departamento_id}}</a></td>
   </tr>
   @endforeach
 
